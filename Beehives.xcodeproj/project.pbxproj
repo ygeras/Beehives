@@ -11,6 +11,7 @@
 		B19AF8D329DF4CE200C9D306 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF8D229DF4CE200C9D306 /* ContentView.swift */; };
 		B19AF8D529DF4CE700C9D306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B19AF8D429DF4CE700C9D306 /* Assets.xcassets */; };
 		B19AF8D829DF4CE700C9D306 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B19AF8D729DF4CE700C9D306 /* Preview Assets.xcassets */; };
+		B19AF8DF29DF4CFE00C9D306 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF8DE29DF4CFD00C9D306 /* ApplicationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		B19AF8D229DF4CE200C9D306 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B19AF8D429DF4CE700C9D306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B19AF8D729DF4CE700C9D306 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B19AF8DE29DF4CFD00C9D306 /* ApplicationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				B19AF8D029DF4CE200C9D306 /* BeehivesApp.swift */,
 				B19AF8D229DF4CE200C9D306 /* ContentView.swift */,
+				B19AF8DE29DF4CFD00C9D306 /* ApplicationData.swift */,
 				B19AF8D429DF4CE700C9D306 /* Assets.xcassets */,
 				B19AF8D629DF4CE700C9D306 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B19AF8DF29DF4CFE00C9D306 /* ApplicationData.swift in Sources */,
 				B19AF8D329DF4CE200C9D306 /* ContentView.swift in Sources */,
 				B19AF8D129DF4CE200C9D306 /* BeehivesApp.swift in Sources */,
 			);
