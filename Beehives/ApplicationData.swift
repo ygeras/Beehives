@@ -7,36 +7,6 @@
 
 import SwiftUI
 
-struct Location: Codable, Identifiable, Equatable {
-    var id = UUID()
-    let name: String
-    var beehives: [Beehive]
-    
-    static func == (lhs: Location, rhs: Location) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
-struct Beehive: Codable, Identifiable, Equatable {
-    var id = UUID()
-    let name: String
-    let age: Int
-    var notes: [Note]
-    
-    static func == (lhs: Beehive, rhs: Beehive) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
-struct Note: Codable, Identifiable, Equatable {
-    var id = UUID()
-    var content: String
-    
-    static func == (lhs: Note, rhs: Note) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
 class ApplicationData: ObservableObject {
     @Published var locations = [Location]() {
         didSet {
@@ -45,6 +15,14 @@ class ApplicationData: ObservableObject {
             }
         }
     }
+    
+    static let mockData = [
+        Location(name: "Location One",
+                 beehives: [Beehive(name: "Beehive One",
+                                    age: 10,
+                                    notes: [Note(content: "Content One")]
+                                   )])
+    ]
     
     init() {
         // For preview purposes
