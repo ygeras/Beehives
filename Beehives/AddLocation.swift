@@ -20,7 +20,7 @@ struct AddLocation: View {
                     .textFieldStyle(.roundedBorder)
                 Button("Save") {
                     let newLocation = Location(name: locationName, beehives: [])
-                    appData.saveLocation(item: newLocation)
+                    appData.addLocation(item: newLocation)
                     dismiss()
                 }
                 .buttonStyle(.borderedProminent)

@@ -20,6 +20,9 @@ struct Location: Codable, Identifiable, Equatable {
 struct Beehive: Codable, Identifiable, Equatable {
     var id = UUID()
     let name: String
+    let population: Int
+    let numberOfQueens: Int
+    let queenType: String
     let age: Int
     var notes: [Note]
     
@@ -30,6 +33,7 @@ struct Beehive: Codable, Identifiable, Equatable {
 
 struct Note: Codable, Identifiable, Equatable {
     var id = UUID()
+    let date: Date
     var content: String
     
     static func == (lhs: Note, rhs: Note) -> Bool {

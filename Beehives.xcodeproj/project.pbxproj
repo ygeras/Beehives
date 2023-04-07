@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B12ABA5529E02D8D00B1B102 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12ABA5429E02D8D00B1B102 /* FileManager-DocumentsDirectory.swift */; };
 		B19AF8D129DF4CE200C9D306 /* BeehivesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF8D029DF4CE200C9D306 /* BeehivesApp.swift */; };
 		B19AF8D329DF4CE200C9D306 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF8D229DF4CE200C9D306 /* ContentView.swift */; };
 		B19AF8D529DF4CE700C9D306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B19AF8D429DF4CE700C9D306 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B12ABA5429E02D8D00B1B102 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		B19AF8CD29DF4CE200C9D306 /* Beehives.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beehives.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B19AF8D029DF4CE200C9D306 /* BeehivesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeehivesApp.swift; sourceTree = "<group>"; };
 		B19AF8D229DF4CE200C9D306 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				B19AF8EC29DF503600C9D306 /* AddNote.swift */,
 				B19AF8DE29DF4CFD00C9D306 /* ApplicationData.swift */,
 				B19AF8E029DF4E7C00C9D306 /* DataModel.swift */,
+				B12ABA5429E02D8D00B1B102 /* FileManager-DocumentsDirectory.swift */,
 				B19AF8D429DF4CE700C9D306 /* Assets.xcassets */,
 				B19AF8D629DF4CE700C9D306 /* Preview Content */,
 			);
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B19AF8E529DF4EF800C9D306 /* AddLocation.swift in Sources */,
+				B12ABA5529E02D8D00B1B102 /* FileManager-DocumentsDirectory.swift in Sources */,
 				B19AF8DF29DF4CFE00C9D306 /* ApplicationData.swift in Sources */,
 				B19AF8E129DF4E7C00C9D306 /* DataModel.swift in Sources */,
 				B19AF8E329DF4EAA00C9D306 /* LocationsView.swift in Sources */,

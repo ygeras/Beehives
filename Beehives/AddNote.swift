@@ -20,8 +20,8 @@ struct AddNote: View {
                 TextField("Notes Name", text: $noteName)
                     .textFieldStyle(.roundedBorder)
                 Button("Save") {
-                    let newNote = Note(content: noteName)
-                    appData.saveNote(in: location, for: beehive, note: newNote)
+                    let newNote = Note(date: Date(), content: noteName)
+                    appData.addNote(in: location, for: beehive, note: newNote)
                     dismiss()
                 }
                 .buttonStyle(.borderedProminent)

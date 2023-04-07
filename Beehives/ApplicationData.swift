@@ -8,21 +8,19 @@
 import SwiftUI
 
 class ApplicationData: ObservableObject {
-    @Published var locations = [Location]() {
-        didSet {
-            if let encoded = try? JSONEncoder().encode(locations) {
-                UserDefaults.standard.set(encoded, forKey: "Items")
-            }
-        }
-    }
+    @Published private(set) var locations: [Location]
+    
+    let savePath = FileManager.documentsDirectory.appending(path: "SavedLocations")
     
     static let mockData = [
         Location(name: "Location One",
                  beehives: [Beehive(name: "Beehive One",
+                                    population: 10000,
+                                    numberOfQueens: 2,
+                                    queenType: "Queen 1",
                                     age: 10,
-                                    notes: [Note(content: "Content One")]
-                                   )])
-    ]
+                                    notes: [Note(date: Date(), content: "Content One")]
+                                   )])]
     
     init() {
         // For preview purposes
@@ -51,31 +49,40 @@ class ApplicationData: ObservableObject {
         ]
          */
         
-        if let savedItems = UserDefaults.standard.data(forKey: "Items") {
-            if let decodedItems = try? JSONDecoder().decode([Location].self, from: savedItems) {
-                locations = decodedItems
-                return
-            }
+        do {
+            let data = try Data(contentsOf: savePath)
+            locations = try JSONDecoder().decode([Location].self, from: data)
+        } catch {
+            locations = []
         }
-        
-        locations = []
-        
     }
     
-    func saveLocation(item: Location) {
+    func save() {
+        do {
+            let data = try JSONEncoder().encode(locations)
+            try data.write(to: savePath, options: [.atomic, .completeFileProtection])
+        } catch {
+            print("Unable to save data.")
+        }
+    }
+    
+    func addLocation(item: Location) {
         locations.append(item)
+        save()
     }
     
-    func saveBeehive(in location: Location, for beehive: Beehive) {
+    func addBeehive(in location: Location, for beehive: Beehive) {
         if let index = locations.firstIndex(of: location) {
             locations[index].beehives.append(beehive)
+            save()
         }
     }
     
-    func saveNote(in location: Location, for beehive: Beehive, note: Note) {
+    func addNote(in location: Location, for beehive: Beehive, note: Note) {
         if let locationIndex = locations.firstIndex(of: location) {
             if let beehiveIndex = locations[locationIndex].beehives.firstIndex(of: beehive) {
                 locations[locationIndex].beehives[beehiveIndex].notes.append(note)
+                save()
             }
         }
     }
@@ -86,6 +93,7 @@ class ApplicationData: ObservableObject {
             indexes.insert(index)
         }
         locations.remove(atOffsets: indexes)
+        save()
     }
     
     func removeBeehive(in location: Location, for beehive: Beehive) {
@@ -95,6 +103,7 @@ class ApplicationData: ObservableObject {
                 indexes.insert(beehiveIndex)
             }
             locations[locationIndex].beehives.remove(atOffsets: indexes)
+            save()
         }
     }
     
@@ -106,6 +115,7 @@ class ApplicationData: ObservableObject {
                     indexes.insert(noteIndex)
                 }
                 locations[locationIndex].beehives[beehiveIndex].notes.remove(atOffsets: indexes)
+                save()
             }
         }
     }
